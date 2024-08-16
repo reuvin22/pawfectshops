@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
       fontSize: 16,
       backgroundColor: '#fff7ed',
       color: '#333',
-      shadowOffset: '10px'
     },
   })
 
