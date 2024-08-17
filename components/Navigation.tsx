@@ -1,9 +1,11 @@
 import { View, Text, StyleSheet, Image, Pressable, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 type Props = {}
 
 const Navigation = (props: Props) => {
+  const navigation = useNavigation()
     const styles = StyleSheet.create({
         container: {
             flex: 1,
@@ -34,8 +36,8 @@ const Navigation = (props: Props) => {
         <Image source={require('../assets/vet.png')} style={styles.img}/>
         <Text>Veterinary</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.imgContainer}>
-        <Image source={require('../assets/petShop.png')} style={styles.img}/>
+      <TouchableOpacity style={styles.imgContainer} onPress={() => navigation.navigate('Petshop')}>
+        <Image source={require('../assets/petShop.png')} style={styles.img} />
         <Text>Pet Shop</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.imgContainer}>

@@ -58,8 +58,11 @@ const Homepage = (props: Props) => {
             showsVerticalScrollIndicator={false}
         >
             <Title 
-                title='PAWFECT SHOP'
-                navigation={props.navigation}
+                mainTitle='PAWFECT SHOP'
+                navigateLeft='Register'
+                navigateRight='Login'
+                titleLeft='Register'
+                titleRight='Login'
             />
             <Search />
             <Navigation />

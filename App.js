@@ -6,6 +6,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import Petshop from './pages/Services/Petshop';
 export default function App() {
   const Stack = createNativeStackNavigator();
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Homepage} options={{ headerShown: false }}/>
         <Stack.Screen name="Register" component={Register} options={{ headerShown: false }}/>
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
+        <Stack.Screen name="Petshop" component={Petshop} options={{ headerShown:false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

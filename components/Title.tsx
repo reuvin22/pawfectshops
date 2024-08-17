@@ -3,11 +3,17 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 
 type Props = {
-    title: string;
-    navigation: any;
+    title?: string,
+    navigation?: any,
+    titleLeft?: string,
+    titleRight?: string,
+    navigateLeft?: string,
+    navigateRight?: string,
+    mainTitle?: string
 }
 
 const Title = (props: Props) => {
+    const navigation = useNavigation()
     const { width } = useWindowDimensions();
     const styles = StyleSheet.create({
         titleText: {
@@ -30,14 +36,20 @@ const Title = (props: Props) => {
         }
     });
 
+    const handleNavigateLeft = () => {
+        navigation.navigate(props.navigateLeft)
+    }
+    const handleNavigateRight = () => {
+        navigation.navigate(props.navigateRight)
+    }
     return (
         <View style={styles.title}>
-            <TouchableOpacity onPress={() => props.navigation.navigate('Register')}>
-                <Text style={styles.data}>Register</Text>
+            <TouchableOpacity onPress={handleNavigateLeft}>
+                <Text style={styles.data}>{props.titleLeft}</Text>
             </TouchableOpacity>
-            <Text style={styles.titleText}>PAWFECT SHOP</Text>
-            <TouchableOpacity onPress={() => props.navigation.navigate('Login')}>
-                <Text style={styles.data}>Login</Text>
+            <Text style={styles.titleText}>{props.mainTitle}</Text>
+            <TouchableOpacity onPress={handleNavigateRight}>
+                <Text style={styles.data}>{props.titleRight}</Text>
             </TouchableOpacity>
         </View>
     )
