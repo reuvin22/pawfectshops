@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, useWindowDimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 type Props = {
     title: string;

@@ -54,7 +54,9 @@ const Homepage = (props: Props) => {
     });
 
     return (
-        <ScrollView style={styles.home}>
+        <ScrollView style={styles.home}
+            showsVerticalScrollIndicator={false}
+        >
             <Title 
                 title='PAWFECT SHOP'
                 navigation={props.navigation}

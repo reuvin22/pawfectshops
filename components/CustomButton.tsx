@@ -1,27 +1,29 @@
-import { View, Text, Button as RNButton } from 'react-native'
-import React, { useState } from 'react'
+import { View, Button as RNButton, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
 
 type Props = {
-    btnTitle: string,
-    press?:any,
-    navigation?:any
-}
+  btnTitle: string;
+  press?: () => void;
+};
 
 const CustomButton = (props: Props) => {
-  const [btnColor, setBtnColor] = useState('')
+  const [btnColor, setBtnColor] = useState<string>('blue'); // Initial color set to 'blue'
 
-  let color;
-  switch(btnColor){
-    case 'green':
-    
-    break;
-    default:
-  }
   return (
-    <View>
-      <RNButton title={props.btnTitle} onPress={props.press}/>
+    <View style={styles.buttonContainer}>
+      <RNButton
+        title={props.btnTitle}
+        onPress={props.press} 
+        color={btnColor}
+      />
     </View>
-  )
-}
+  );
+};
 
-export default CustomButton
+const styles = StyleSheet.create({
+  buttonContainer: {
+    marginVertical: 10,
+  },
+});
+
+export default CustomButton;

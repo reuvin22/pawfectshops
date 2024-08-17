@@ -7,6 +7,7 @@ const ListShop = (props: Props) => {
     const listImage = [
         { source: require('../assets/foods/acc.png'), name: 'Dog Lace' },
         { source: require('../assets/foods/df1.jpg'), name: 'Halo holistic' },
+        { source: require('../assets/foods/df2.jpeg'), name: 'Lucky Pets' },
         { source: require('../assets/foods/df2.jpeg'), name: 'Lucky Pets' }
     ]
 
@@ -15,8 +16,8 @@ const ListShop = (props: Props) => {
             flexDirection: 'row',
         },
         imgStyle: {
-            width: 150,
-            height: 150,
+            width: 100,
+            height: 100,
             borderRadius: 10
         },
         listImgContainer: {
@@ -31,7 +32,9 @@ const ListShop = (props: Props) => {
     })
 
     return (
-        <ScrollView style={styles.container} horizontal>
+        <ScrollView style={styles.container} horizontal
+            showsHorizontalScrollIndicator={false}
+        >
             {listImage.map((img, index) => (
                 <TouchableOpacity key={index} style={styles.listImgContainer}>
                     <Image source={img.source} style={styles.imgStyle} />

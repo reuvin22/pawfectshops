@@ -7,7 +7,8 @@ const ListImages = (props: Props) => {
     const listImage = [
         { source: require('../assets/adopted/cat1.jpg'), name: 'Mimi' },
         { source: require('../assets/adopted/dog1.jpg'), name: 'Ruru' },
-        { source: require('../assets/adopted/dog2.jpeg'), name: 'Momo' }
+        { source: require('../assets/adopted/dog2.jpeg'), name: 'Momo' },
+        { source: require('../assets/adopted/cat1.jpg'), name: 'Mimi' }
     ]
 
     const styles = StyleSheet.create({
@@ -15,8 +16,8 @@ const ListImages = (props: Props) => {
             flexDirection: 'row',
         },
         imgStyle: {
-            width: 150,
-            height: 150,
+            width: 100,
+            height: 100,
             borderRadius: 10
         },
         listImgContainer: {
@@ -31,7 +32,9 @@ const ListImages = (props: Props) => {
     })
 
     return (
-        <ScrollView style={styles.container} horizontal>
+        <ScrollView style={styles.container} horizontal
+            showsHorizontalScrollIndicator={false}
+        >
             {listImage.map((img, index) => (
                 <TouchableOpacity key={index} style={styles.listImgContainer}>
                     <Image source={img.source} style={styles.imgStyle} />
